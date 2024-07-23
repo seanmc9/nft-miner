@@ -15,17 +15,17 @@ contract NftMiner is ERC20 {
         underlyingNft = underlyingNft_;
     }
 
-    function mine(uint256 tokenId) public {
+    function startMining(uint256 tokenId) public {
         if (underlyingNft.ownerOf(tokenId) != msg.sender) revert MustOwnTokenId(tokenId);
 
-        isMining[tokenId] = block.timestamp;
+        isMining[tokenId] = block.number;
     }
 
     function stopMining(uint256 tokenId) public {
         if (underlyingNft.ownerOf(tokenId) != msg.sender) revert MustOwnTokenId(tokenId);
         if (isMining[tokenId] == 0) revert TokenMustBeMining();
 
-        _mint(msg.sender, block.timestamp - isMining[tokenId]);
+        _mint(msg.sender, block.number - isMining[tokenId]);
         isMining[tokenId] = 0;
     }
 }
