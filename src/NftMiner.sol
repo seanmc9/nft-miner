@@ -6,7 +6,7 @@ import "@openzeppelin/token/ERC20/ERC20.sol";
 
 contract NftMiner is ERC20 {
     IERC721 public underlyingNft;
-    mapping(uint256 => uint256) isMining;
+    mapping(uint256 => uint256) public isMining;
 
     error MustOwnTokenId(uint256 tokenId);
     error TokenMustBeMining();
