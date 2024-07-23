@@ -25,7 +25,7 @@ contract NftMiner is ERC20 {
         if (underlyingNft.ownerOf(tokenId) != msg.sender) revert MustOwnTokenId(tokenId);
         if (isMining[tokenId] == 0) revert TokenMustBeMining();
 
-        _mint(msg.sender, block.number - isMining[tokenId]);
+        _mint(msg.sender, (block.number - isMining[tokenId]) * 1 ether);
         isMining[tokenId] = 0;
     }
 }

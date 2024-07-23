@@ -37,6 +37,6 @@ contract NftMinerTest is Test {
 
         vm.stopPrank();
 
-        assertEq(nftMiner.balanceOf(OWNER_OF_TEST_TOKEN_ID), 1);
+        assertEq(nftMiner.balanceOf(OWNER_OF_TEST_TOKEN_ID), 1 ether);
     }
 }
