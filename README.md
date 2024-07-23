@@ -1,69 +1,7 @@
-## Solidity Development Template
+## NFT Miner
 
-The first thing you should do is get [Foundry](https://book.getfoundry.sh/) installed.
+No staking required, mine a token with NFTs.
 
-Do do this, follow the [instructions here](https://book.getfoundry.sh/getting-started/installation) under the "Use Foundryup" section. Namely:
-1. Run `curl -L https://foundry.paradigm.xyz | bash` in your terminal.
-2. Run `foundryup` in your terminal.
+### To Deploy
 
-Once that has successfully run, then run `forge build` in the top directory of this repository in your terminal to compile and link all of the code (with the libraries) up.
-
-Once you do this, you are ready to start editing, compiling, testing, and deploying the code in this repository.
-
-Below you can find documentation on how to use forge (the Soldity development framework being used in this repository) and other [Foundry](https://book.getfoundry.sh/) tools available to you after running `foundryup`.
-
-## Foundry Documentation
-
-https://book.getfoundry.sh/
-
-## Foundry Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+`forge create NftMiner --constructor-args <TOKEN_NAME> <TOKEN_TICKER> <UNDERLYING_NFT_ADDRESS> --rpc-url <RPC_URL> --private-key <WHERE_TO_DEPLOY_FROM>`
