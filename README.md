@@ -1,4 +1,4 @@
-## NFT Miner
+## NFT Mining
 
 No staking required, mine a token with NFTs.
 
